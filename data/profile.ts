@@ -2,8 +2,8 @@ export const profile = {
   name: "Mohammad Rico Ferdian Khoirunizar",
   initials: "RF",
   role: {
-    id: "Junior Electrical Engineer | Pemeliharaan Industri & Analisis Sistem Tenaga",
-    en: "Junior Electrical Engineer | Industrial Maintenance & Power System Analysis"
+    id: "Junior Electrical Engineer | Pemeliharaan Industri, Analisis Sistem Tenaga & Energi Terbarukan",
+    en: "Junior Electrical Engineer | Industrial Maintenance, Power System Analysis & Renewable Energy"
   },
   heroHeading: {
     id: "Mohammad Rico Ferdian Khoirunizar.",
