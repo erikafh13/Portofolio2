@@ -13,8 +13,8 @@ import CertificateButton from "./CertificateButton";
 
 const heading = { id: "Pencapaian", en: "Achievements" };
 const description = {
-  id: "Sertifikat dan pencapaian yang telah diraih.",
-  en: "Certificates and achievements earned along the way."
+  id: "Sertifikat dan publikasi yang telah diraih.",
+  en: "Certificates and publications earned along the way."
 };
 
 export default function Achievements() {
@@ -61,29 +61,35 @@ export default function Achievements() {
         </div>
         )}
 
-        <div className={awards.length > 0 ? "mt-12" : "mt-10"}>
-          <h3 className="font-display text-lg font-semibold text-text-primary dark:text-text-dark-primary">
-            {lang === "id" ? "Sertifikasi" : "Certifications"}
-          </h3>
-          <div className="mt-5">
-            <Reveal>
-              <Certifications />
-            </Reveal>
-          </div>
-        </div>
-
-        {publications.length > 0 && (
-          <div className="mt-12">
+        <div
+          className={`${awards.length > 0 ? "mt-12" : "mt-10"} grid gap-10 ${
+            publications.length > 0 ? "lg:grid-cols-2" : ""
+          }`}
+        >
+          <div>
             <h3 className="font-display text-lg font-semibold text-text-primary dark:text-text-dark-primary">
-              {lang === "id" ? "Publikasi" : "Publications"}
+              {lang === "id" ? "Sertifikasi" : "Certifications"}
             </h3>
             <div className="mt-5">
               <Reveal>
-                <Publications />
+                <Certifications />
               </Reveal>
             </div>
           </div>
-        )}
+
+          {publications.length > 0 && (
+            <div>
+              <h3 className="font-display text-lg font-semibold text-text-primary dark:text-text-dark-primary">
+                {lang === "id" ? "Publikasi" : "Publications"}
+              </h3>
+              <div className="mt-5">
+                <Reveal>
+                  <Publications />
+                </Reveal>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

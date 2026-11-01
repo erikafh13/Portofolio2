@@ -44,7 +44,7 @@ const config: Config = {
         body: ["var(--font-body)", "sans-serif"]
       },
       maxWidth: {
-        content: "1360px"
+        content: "1280px"
       },
       boxShadow: {
         soft: "0 1px 2px rgba(14,42,94,0.06), 0 10px 30px -14px rgba(14,42,94,0.18)",

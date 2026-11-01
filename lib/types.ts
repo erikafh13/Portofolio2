@@ -5,6 +5,8 @@ export type Localized = {
   en: string;
 };
 
+export type Text = string | Localized;
+
 export type SkillItem = {
   name: string;
   category: "knowledge" | "technical" | "software";
@@ -12,9 +14,9 @@ export type SkillItem = {
 
 export type EducationItem = {
   institution: string;
-  location: string;
+  location: Text;
   degree: Localized;
-  period: string;
+  period: Text;
   scoreLabel: Localized;
   scoreValue: string;
   coursework?: Localized[];
@@ -23,15 +25,16 @@ export type EducationItem = {
 
 export type ExperienceItem = {
   id: string;
-  company: string;
+  company: Text;
   position: Localized;
-  location: string;
-  period: string;
+  location: Text;
+  period: Text;
   summary: Localized;
   responsibilities: Localized[];
   skills?: string[];
   images?: string[];
   certificate?: string;
+  publication?: { url: string; label: Localized };
 };
 
 export type OrganizationRole = {
@@ -88,8 +91,8 @@ export type AwardItem = {
 export type CertificationItem = {
   id: string;
   name: Localized;
-  issuer: string;
-  date: string;
+  issuer: Text;
+  date: Text;
   credentialId?: string;
   credentialUrl?: string;
   certificate?: string;

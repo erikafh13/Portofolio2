@@ -1,13 +1,13 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { Lang, Localized } from "./types";
+import type { Lang, Text } from "./types";
 
 type LanguageContextValue = {
   lang: Lang;
   setLang: (lang: Lang) => void;
   toggleLang: () => void;
-  t: (value: Localized) => string;
+  t: (value: Text) => string;
 };
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
@@ -15,7 +15,7 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(undefine
 const STORAGE_KEY = "rico-portfolio-lang";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("id");
+  const [lang, setLangState] = useState<Lang>("en");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -34,12 +34,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const toggleLang = () => setLang(lang === "id" ? "en" : "id");
 
   const t = useMemo(() => {
-    return (value: Localized) => (lang === "id" ? value.id : value.en);
+    return (value: Text) =>
+      typeof value === "string" ? value : lang === "id" ? value.id : value.en;
   }, [lang]);
 
   if (!mounted) {
     return (
-      <LanguageContext.Provider value={{ lang: "id", setLang, toggleLang, t: (v) => v.id }}>
+      <LanguageContext.Provider
+        value={{ lang: "en", setLang, toggleLang, t: (v) => (typeof v === "string" ? v : v.en) }}
+      >
         {children}
       </LanguageContext.Provider>
     );

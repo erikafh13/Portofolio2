@@ -17,7 +17,7 @@ export default function Certifications() {
   }
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-4">
       {certifications.map((cert) => (
         <div
           key={cert.id}
@@ -33,10 +33,10 @@ export default function Certifications() {
               </p>
               <CertificateButton src={cert.certificate} title={t(cert.name)} />
             </div>
-            <p className="mt-1 text-sm text-text-secondary dark:text-text-dark-secondary">{cert.issuer}</p>
+            <p className="mt-1 text-sm text-text-secondary dark:text-text-dark-secondary">{t(cert.issuer)}</p>
             {(cert.date || cert.credentialId) && (
               <div className="mt-2 flex flex-wrap gap-x-3 text-xs text-text-secondary dark:text-text-dark-secondary">
-                {cert.date && <span>{cert.date}</span>}
+                {cert.date && <span>{t(cert.date)}</span>}
                 {cert.credentialId && <span>ID: {cert.credentialId}</span>}
               </div>
             )}

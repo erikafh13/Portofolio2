@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import type { ExperienceItem } from "@/lib/types";
 import PhotoSlider from "./PhotoSlider";
@@ -32,25 +32,25 @@ export default function ExperienceCard({ item, index }: { item: ExperienceItem; 
             }
           }}
           aria-expanded={open}
-          className="flex w-full cursor-pointer items-start justify-between gap-4 p-5 text-left sm:p-6"
+          className="w-full cursor-pointer p-5 text-left sm:p-6"
         >
+          <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <p className="font-display text-base font-semibold text-text-primary dark:text-text-dark-primary">
               {t(item.position)}
             </p>
-            <p className="mt-1 text-sm font-medium text-accent dark:text-accent-dark">{item.company}</p>
-            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-text-secondary dark:text-text-dark-secondary">
-              <span>{item.period}</span>
+            <p className="mt-1 text-sm font-medium text-accent dark:text-accent-dark">{t(item.company)}</p>
+            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-text-secondary lg:hidden dark:text-text-dark-secondary">
+              <span>{t(item.period)}</span>
               <span className="text-border dark:text-border-dark">|</span>
-              <span>{item.location}</span>
+              <span>{t(item.location)}</span>
             </div>
-            {!open && (
-              <p className="mt-3 text-sm text-text-secondary dark:text-text-dark-secondary">
-                {t(item.summary)}
-              </p>
-            )}
           </div>
-          <div className="flex flex-none items-center gap-2">
+          <div className="flex flex-none items-center gap-2 lg:gap-4">
+            <div className="hidden text-right text-xs leading-relaxed text-text-secondary lg:block dark:text-text-dark-secondary">
+              <p className="font-medium text-text-primary dark:text-text-dark-primary">{t(item.period)}</p>
+              <p>{t(item.location)}</p>
+            </div>
             <CertificateButton src={item.certificate} title={t(item.position)} />
             <ChevronDown
               className={`h-4 w-4 flex-none text-text-secondary transition-transform dark:text-text-dark-secondary ${
@@ -58,6 +58,12 @@ export default function ExperienceCard({ item, index }: { item: ExperienceItem; 
               }`}
             />
           </div>
+          </div>
+          {!open && (
+            <p className="mt-3 text-sm text-text-secondary dark:text-text-dark-secondary">
+              {t(item.summary)}
+            </p>
+          )}
         </div>
 
         <AnimatePresence initial={false}>
@@ -92,6 +98,19 @@ export default function ExperienceCard({ item, index }: { item: ExperienceItem; 
                       </span>
                     ))}
                   </div>
+                )}
+
+                {item.publication && (
+                  <a
+                    href={item.publication.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold text-accent transition hover:border-accent dark:border-border-dark dark:text-accent-dark dark:hover:border-accent-dark"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    {t(item.publication.label)}
+                  </a>
                 )}
 
                 <PhotoSlider images={item.images} alt={t(item.position)} />

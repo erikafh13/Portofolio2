@@ -20,7 +20,7 @@ export default function About() {
       href: "#pengalaman-kerja"
     },
     {
-      value: "3",
+      value: "2",
       label: { id: "Tahun Pengalaman Teknik", en: "Years of Engineering Experience" },
       href: "#experience"
     }

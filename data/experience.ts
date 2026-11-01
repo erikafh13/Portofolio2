@@ -8,8 +8,8 @@ export const experience: ExperienceItem[] = [
       id: "Electrical Engineer Intern",
       en: "Electrical Engineer Intern"
     },
-    location: "Gresik, Jawa Timur",
-    period: "Des 2025 – Jan 2026",
+    location: { id: "Gresik, Jawa Timur", en: "Gresik, East Java" },
+    period: { id: "Des 2025 – Jan 2026", en: "Dec 2025 – Jan 2026" },
     summary: {
       id: "Magang di Departemen Pemeliharaan I: penggantian motor kritikal 6kV, FAT motor 6kV 400kW, dan analisis hubung singkat dengan ETAP (IEC 60909).",
       en: "Internship at Maintenance Department I: critical 6kV motor replacement, FAT of a 6kV 400kW motor, and short-circuit analysis with ETAP (IEC 60909)."
@@ -49,59 +49,13 @@ export const experience: ExperienceItem[] = [
     certificate: "/certification/Sertifikat-Magang-Petrokimia-Gresik.pdf"
   },
   {
-    id: "umg-lithium-ion-battery-research",
-    company: "Universitas Muhammadiyah Gresik — Proyek Riset Doktoral",
-    position: {
-      id: "Riset Baterai Lithium-Ion: Akuisisi Data, Analisis, dan Forecasting Deep Learning",
-      en: "Lithium-Ion Battery Research: Data Acquisition, Analysis, and Deep Learning Forecasting"
-    },
-    location: "Gresik, Jawa Timur",
-    period: "Sep 2025 – Sekarang",
-    summary: {
-      id: "Berkontribusi pada proyek riset doktoral selama satu tahun yang berfokus pada pengambilan, analisis, dan forecasting data baterai.",
-      en: "Contributed to a one-year doctoral research project focused on lithium-ion battery monitoring, data analysis, and performance forecasting."
-    },
-    responsibilities: [
-      {
-        id: "Berkontribusi dalam proyek penelitian doktoral selama satu tahun yang berfokus pada pengambilan, analisis, dan forecasting data baterai.",
-        en: "Contributed to a one-year doctoral research project focused on lithium-ion battery monitoring, data analysis, and performance forecasting."
-      },
-      {
-        id: "Membantu pengembangan dan penerapan sistem akuisisi data (DAQ) untuk mengumpulkan serta mencatat data operasional baterai.",
-        en: "Assisted in developing and implementing data acquisition (DAQ) systems to collect and record battery operating data."
-      },
-      {
-        id: "Melakukan pra-pemrosesan, analisis, dan interpretasi data untuk mengidentifikasi pola kinerja dan degradasi baterai.",
-        en: "Performed data preprocessing, analysis, and interpretation to identify battery performance and degradation patterns."
-      },
-      {
-        id: "Mengembangkan model forecasting berbasis pembelajaran mendalam (deep learning) untuk menganalisis perilaku baterai dan memprediksi kinerja di masa mendatang.",
-        en: "Applied deep learning-based forecasting techniques to analyze battery behavior and predict future performance."
-      },
-      {
-        id: "Mendukung kegiatan penelitian yang mencakup pengujian baterai, pengelolaan data eksperimental, dan evaluasi kinerja model.",
-        en: "Supported research activities involving battery testing, experimental data management, and evaluation of model performance."
-      }
-    ],
-    skills: ["DAQ", "Deep Learning", "Data Analysis", "Python", "Lithium-Ion Battery"],
-    images: [
-      "/experience/Riset-Baterai/foto-1.jpg",
-      "/experience/Riset-Baterai/foto-2.jpg",
-      "/experience/Riset-Baterai/foto-3.jpg",
-      "/experience/Riset-Baterai/foto-4.jpg",
-      "/experience/Riset-Baterai/foto-5.jpg",
-      "/experience/Riset-Baterai/foto-6.jpg"
-    ],
-    certificate: ""
-  },
-  {
     id: "wiharta-karya-agung-electrical-technician",
     company: "PT Wiharta Karya Agung",
     position: {
       id: "Electrical Technician",
       en: "Electrical Technician"
     },
-    location: "Gresik, Jawa Timur",
+    location: { id: "Gresik, Jawa Timur", en: "Gresik, East Java" },
     period: "Feb 2022 – Mar 2023",
     summary: {
       id: "Rewinding motor induksi satu fasa dan tiga fasa serta inspeksi, pemeliharaan, dan troubleshooting motor industri, panel MV/LV, dan PLC.",
@@ -140,7 +94,7 @@ export const experience: ExperienceItem[] = [
       id: "Air Conditioning Technician",
       en: "Air Conditioning Technician"
     },
-    location: "Gresik, Jawa Timur",
+    location: { id: "Gresik, Jawa Timur", en: "Gresik, East Java" },
     period: "Jun 2021 – Jan 2022",
     summary: {
       id: "Servis, pemeliharaan preventif, dan diagnosis kerusakan sistem pendingin udara.",
@@ -158,6 +112,59 @@ export const experience: ExperienceItem[] = [
     ],
     skills: ["Preventive Maintenance", "Diagnostics", "Refrigeration"],
     images: [],
+    certificate: ""
+  },
+  {
+    id: "umg-lithium-ion-battery-research",
+    company: {
+      id: "Universitas Muhammadiyah Gresik — Proyek Riset Doktoral",
+      en: "Universitas Muhammadiyah Gresik — Doctoral Research Project"
+    },
+    position: {
+      id: "Riset Energi Terbarukan: Akuisisi Data, Analisis, dan Forecasting Baterai Lithium-Ion",
+      en: "Renewable Energy Research: Lithium-Ion Battery Data Acquisition, Analysis, and Forecasting"
+    },
+    location: { id: "Gresik, Jawa Timur", en: "Gresik, East Java" },
+    period: { id: "Sep 2025 – Sekarang", en: "Sep 2025 – Present" },
+    summary: {
+      id: "Berkontribusi pada proyek riset doktoral selama satu tahun yang berfokus pada pengambilan, analisis, dan forecasting data baterai.",
+      en: "Contributed to a one-year doctoral research project focused on lithium-ion battery monitoring, data analysis, and performance forecasting."
+    },
+    responsibilities: [
+      {
+        id: "Berkontribusi dalam proyek penelitian doktoral selama satu tahun yang berfokus pada pengambilan, analisis, dan forecasting data baterai.",
+        en: "Contributed to a one-year doctoral research project focused on lithium-ion battery monitoring, data analysis, and performance forecasting."
+      },
+      {
+        id: "Membantu pengembangan dan penerapan sistem akuisisi data (DAQ) untuk mengumpulkan serta mencatat data operasional baterai.",
+        en: "Assisted in developing and implementing data acquisition (DAQ) systems to collect and record battery operating data."
+      },
+      {
+        id: "Melakukan pra-pemrosesan, analisis, dan interpretasi data untuk mengidentifikasi pola kinerja dan degradasi baterai.",
+        en: "Performed data preprocessing, analysis, and interpretation to identify battery performance and degradation patterns."
+      },
+      {
+        id: "Mengembangkan model forecasting berbasis pembelajaran mendalam (deep learning) untuk menganalisis perilaku baterai dan memprediksi kinerja di masa mendatang.",
+        en: "Applied deep learning-based forecasting techniques to analyze battery behavior and predict future performance."
+      },
+      {
+        id: "Mendukung kegiatan penelitian yang mencakup pengujian baterai, pengelolaan data eksperimental, dan evaluasi kinerja model.",
+        en: "Supported research activities involving battery testing, experimental data management, and evaluation of model performance."
+      }
+    ],
+    skills: ["Renewable Energy", "DAQ", "Deep Learning", "Data Analysis", "Python", "Lithium-Ion Battery"],
+    publication: {
+      url: "https://doi.org/10.31544/jtera.v11.i1.2026.117-130",
+      label: { id: "Lihat Publikasi Jurnal", en: "View Journal Publication" }
+    },
+    images: [
+      "/experience/Riset-Baterai/foto-1.jpg",
+      "/experience/Riset-Baterai/foto-2.jpg",
+      "/experience/Riset-Baterai/foto-3.jpg",
+      "/experience/Riset-Baterai/foto-4.jpg",
+      "/experience/Riset-Baterai/foto-5.jpg",
+      "/experience/Riset-Baterai/foto-6.jpg"
+    ],
     certificate: ""
   }
 ];

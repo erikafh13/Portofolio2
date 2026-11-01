@@ -13,7 +13,7 @@ export const certifications: CertificationItem[] = [
       en: "Internship / Field Work Practice Certificate — Maintenance Dept. I"
     },
     issuer: "PT Petrokimia Gresik",
-    date: "1 Des 2025 – 31 Jan 2026",
+    date: { id: "1 Des 2025 – 31 Jan 2026", en: "1 Dec 2025 – 31 Jan 2026" },
     credentialId: "00702/DL.06.01/1/2026",
     credentialUrl: "",
     certificate: "/certification/Sertifikat-Magang-Petrokimia-Gresik.pdf"

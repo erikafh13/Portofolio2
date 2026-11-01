@@ -19,7 +19,7 @@ export default function Publications() {
   }
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-4">
       {publications.map((pub) => (
         <a
           key={pub.id}
@@ -29,7 +29,7 @@ export default function Publications() {
           className="block rounded-2xl border border-border bg-white p-5 transition hover:border-accent dark:border-border-dark dark:bg-card-dark dark:hover:border-accent-dark"
         >
           <span className="text-xs font-medium text-accent dark:text-accent-dark">
-            {pub.type} &middot; {pub.date}
+            {lang === "id" && pub.type === "Journal" ? "Jurnal" : pub.type} &middot; {pub.date}
           </span>
           <h4 className="mt-1.5 font-display text-sm font-semibold text-text-primary dark:text-text-dark-primary">
             {t(pub.title)}
@@ -38,7 +38,7 @@ export default function Publications() {
             {t(pub.description)}
           </p>
           <p className="mt-3 text-xs text-text-secondary dark:text-text-dark-secondary">
-            {pub.authors.join(", ")} &middot; {pub.publisher}
+            {pub.authors.length > 0 ? `${pub.authors.join(", ")} \u00b7 ` : ""}{pub.publisher}
           </p>
         </a>
       ))}

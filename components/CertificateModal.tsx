@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { X, ImageOff } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
 
 export default function CertificateModal({
   src,
@@ -13,6 +14,7 @@ export default function CertificateModal({
   title: string;
   onClose: () => void;
 }) {
+  const { lang } = useLanguage();
   const [mounted, setMounted] = useState(false);
   const [imgError, setImgError] = useState(false);
 
@@ -54,7 +56,7 @@ export default function CertificateModal({
           </p>
           <button
             onClick={onClose}
-            aria-label="Tutup"
+            aria-label={lang === "id" ? "Tutup" : "Close"}
             className="flex h-8 w-8 flex-none items-center justify-center rounded-full text-text-secondary transition hover:bg-bg-soft dark:text-text-dark-secondary dark:hover:bg-bg-dark-soft"
           >
             <X className="h-5 w-5" />
@@ -76,7 +78,9 @@ export default function CertificateModal({
             <div className="flex h-[50vh] w-[70vw] max-w-md flex-col items-center justify-center gap-3 p-6 text-center sm:w-[420px]">
               <ImageOff className="h-8 w-8 text-text-secondary dark:text-text-dark-secondary" />
               <p className="text-sm text-text-secondary dark:text-text-dark-secondary">
-                Gambar tidak ditemukan. Pastikan file dan path-nya sudah benar.
+                {lang === "id"
+                  ? "Gambar tidak ditemukan. Pastikan file dan path-nya sudah benar."
+                  : "Image not found. Please check the file and its path."}
               </p>
             </div>
           ) : (

@@ -13,8 +13,8 @@ import Events from "./Events";
 
 const heading = { id: "Pengalaman", en: "Experience" };
 const description = {
-  id: "Perjalanan profesional Rico di bidang pemeliharaan industri, analisis sistem tenaga listrik, dan riset baterai.",
-  en: "Rico's professional journey across industrial maintenance, power system analysis, and battery research."
+  id: "Perjalanan profesional Rico di bidang pemeliharaan industri, analisis sistem tenaga listrik, dan energi terbarukan.",
+  en: "Rico's professional journey across industrial maintenance, power system analysis, and renewable energy."
 };
 
 export default function Experience() {

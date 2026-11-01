@@ -9,7 +9,7 @@ export default function Education() {
   const { t, lang } = useLanguage();
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className={`grid gap-4 ${education.length > 1 ? "sm:grid-cols-2" : ""}`}>
       {education.map((item) => (
         <div
           key={item.institution}
@@ -26,10 +26,10 @@ export default function Education() {
               <CertificateButton src={item.certificate} title={item.institution} />
             </div>
             <p className="mt-0.5 text-sm text-text-secondary dark:text-text-dark-secondary">
-              {t(item.degree)} &middot; {item.location}
+              {t(item.degree)} &middot; {t(item.location)}
             </p>
             <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-text-secondary dark:text-text-dark-secondary">
-              <span>{item.period}</span>
+              <span>{t(item.period)}</span>
               <span className="text-border dark:text-border-dark">|</span>
               <span className="font-medium text-navy dark:text-accent-dark">
                 {t(item.scoreLabel)}: {item.scoreValue}

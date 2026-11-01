@@ -20,20 +20,20 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ricoferdiank.vercel.app"),
   title: "Mohammad Rico Ferdian Khoirunizar | Electrical Engineering & Power System Analysis",
   description:
-    "Portfolio of Mohammad Rico Ferdian Khoirunizar, Junior Electrical Engineer with experience in industrial maintenance, power system analysis (ETAP, IEC 60909), and lithium-ion battery research.",
+    "Portfolio of Mohammad Rico Ferdian Khoirunizar, Junior Electrical Engineer with experience in industrial maintenance, power system analysis (ETAP, IEC 60909), and renewable energy research.",
   openGraph: {
     title: "Mohammad Rico Ferdian Khoirunizar | Electrical Engineering & Power System Analysis",
     description:
-      "Portfolio of Mohammad Rico Ferdian Khoirunizar, Junior Electrical Engineer with experience in industrial maintenance, power system analysis (ETAP, IEC 60909), and lithium-ion battery research.",
+      "Portfolio of Mohammad Rico Ferdian Khoirunizar, Junior Electrical Engineer with experience in industrial maintenance, power system analysis (ETAP, IEC 60909), and renewable energy research.",
     type: "website",
-    locale: "id_ID",
-    alternateLocale: "en_US"
+    locale: "en_US",
+    alternateLocale: "id_ID"
   },
   twitter: {
     card: "summary_large_image",
     title: "Mohammad Rico Ferdian Khoirunizar | Electrical Engineering & Power System Analysis",
     description:
-      "Portfolio of Mohammad Rico Ferdian Khoirunizar, Junior Electrical Engineer with experience in industrial maintenance, power system analysis (ETAP, IEC 60909), and lithium-ion battery research."
+      "Portfolio of Mohammad Rico Ferdian Khoirunizar, Junior Electrical Engineer with experience in industrial maintenance, power system analysis (ETAP, IEC 60909), and renewable energy research."
   }
 };
 
@@ -54,7 +54,7 @@ const themeInitScript = `
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
