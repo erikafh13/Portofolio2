@@ -18,10 +18,10 @@ const badges = [
 
 // Badge positions sit around the frame (corners / edges) so the face stays clear.
 const badgePositions = [
-  "-left-3 top-[18%] sm:-left-8",
-  "right-3 top-3 sm:right-6 sm:top-4",
-  "-right-3 top-[68%] sm:-right-8",
-  "-left-2 bottom-5 sm:-left-6 sm:bottom-7"
+  "left-0 top-[18%] -translate-x-1/2",
+  "right-0 top-4 translate-x-1/2",
+  "right-0 top-[68%] translate-x-1/2",
+  "left-0 bottom-6 -translate-x-1/2"
 ];
 
 function ProfileVisual() {
@@ -30,7 +30,7 @@ function ProfileVisual() {
   const initials = profile.initials;
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-[250px] sm:max-w-[340px] lg:mr-0 lg:ml-auto xl:max-w-[420px]">
+    <div className="relative mx-auto aspect-square w-full max-w-[200px] min-[380px]:max-w-[210px] sm:max-w-[340px] lg:ml-auto lg:mr-[4.5rem] lg:w-[calc(100%-4.5rem)] xl:max-w-[420px]">
       <div
         className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,#0E2A5E_0%,#2F6FED_100%)] opacity-90"
         aria-hidden="true"
@@ -64,16 +64,19 @@ function ProfileVisual() {
       </div>
 
       {badges.map((badge, index) => (
-        <motion.div
-          key={badge.en}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 + index * 0.15, duration: 0.5 }}
-          className={`absolute z-20 whitespace-nowrap rounded-full border border-border bg-white px-2.5 py-1 text-[10px] font-semibold text-navy shadow-soft dark:border-border-dark dark:bg-card-dark dark:text-white sm:px-3 sm:py-1.5 sm:text-xs ${badgePositions[index]}`}
-        >
-          <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-accent align-middle dark:bg-accent-dark" />
-          {t(badge)}
-        </motion.div>
+        // Wrapper handles the half-in / half-out placement on the frame edge;
+        // the inner motion element handles the entrance animation.
+        <div key={badge.en} className={`absolute z-20 ${badgePositions[index]}`}>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 + index * 0.15, duration: 0.5 }}
+            className="whitespace-nowrap rounded-full border border-border bg-white px-2.5 py-1 text-[10px] font-semibold text-navy shadow-soft dark:border-border-dark dark:bg-card-dark dark:text-white sm:px-3 sm:py-1.5 sm:text-xs"
+          >
+            <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-accent align-middle dark:bg-accent-dark" />
+            {t(badge)}
+          </motion.div>
+        </div>
       ))}
     </div>
   );
