@@ -153,10 +153,6 @@ export const experience: ExperienceItem[] = [
       }
     ],
     skills: ["Renewable Energy", "DAQ", "Deep Learning", "Data Analysis", "Python", "Lithium-Ion Battery"],
-    publication: {
-      url: "https://doi.org/10.31544/jtera.v11.i1.2026.117-130",
-      label: { id: "Lihat Publikasi Jurnal", en: "View Journal Publication" }
-    },
     images: [
       "/experience/Riset-Baterai/foto-1.jpg",
       "/experience/Riset-Baterai/foto-2.jpg",
@@ -165,6 +161,6 @@ export const experience: ExperienceItem[] = [
       "/experience/Riset-Baterai/foto-5.jpg",
       "/experience/Riset-Baterai/foto-6.jpg"
     ],
-    certificate: ""
+    certificate: "/publikasi/JTERA-2026-117-130.pdf"
   }
 ];
