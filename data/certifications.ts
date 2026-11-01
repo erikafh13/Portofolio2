@@ -9,8 +9,8 @@ export const certifications: CertificationItem[] = [
   {
     id: "magang-petrokimia-gresik",
     name: {
-      id: "Sertifikat Magang / Praktik Kerja Lapangan — Dep. Pemeliharaan I",
-      en: "Internship / Field Work Practice Certificate — Maintenance Dept. I"
+      id: "Sertifikat Magang \u2014 Dep.\u00a0Pemeliharaan\u00a0I",
+      en: "Internship Certificate \u2014 Maintenance\u00a0Dept.\u00a0I"
     },
     issuer: "PT Petrokimia Gresik",
     date: { id: "1 Des 2025 – 31 Jan 2026", en: "1 Dec 2025 – 31 Jan 2026" },
